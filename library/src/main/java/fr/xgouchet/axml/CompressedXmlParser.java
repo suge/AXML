@@ -450,7 +450,7 @@ public class CompressedXmlParser {
 //            }
 
 //          --------------------- new ---------------------
-            strLength = (mData[offset + 1] << 8) & 0xff | mData[offset];
+            strLength = ((mData[offset + 1] << 8) & 0xff) | (mData[offset] & 0xff);
             offset += 2;
             for(int i = 0; i < strLength; i++)
             {
