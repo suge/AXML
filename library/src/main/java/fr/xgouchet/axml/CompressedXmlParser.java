@@ -456,7 +456,7 @@ public class CompressedXmlParser {
             {
                 byte hByte = mData[offset + (i * 2 + 1)];
                 byte lByte = mData[offset + (i * 2)];
-                char c = (char) (((hByte & 0xff) << 8) |(lByte & 0xff));
+                char c = (char) (((hByte << 8) & 0xFF00) | (lByte & 0xff));
                 stringBuilder.append(c);
             }
             return stringBuilder.toString();
